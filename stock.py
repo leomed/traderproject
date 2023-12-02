@@ -1,10 +1,10 @@
 import requests
-
+import os
 STOCK_NAME = "TSLA"
 
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
-STOCK_API_KEY = "K6YF6TOKZDBACI6R"
+STOCK_API_KEY = os.environ.get("STOCK_API_KEY")
 
 stock_params = {
     "function": "TIME_SERIES_DAILY",

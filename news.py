@@ -1,6 +1,6 @@
 import requests
 import datetime as dt
-
+import os
 
 now = dt.datetime.now()
 year = now.year
@@ -14,8 +14,8 @@ today = f"{year}-{month}-{day - 1}"
 COMPANY_NAME = "Tesla Inc"
 
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
-NEW_API = "1fd5c5101e3845f583bd20bff555aac4"
-
+NEW_API = os.environ.get("NEW_API")
+print(NEW_API)
 
 news_params = {
     "q": COMPANY_NAME,

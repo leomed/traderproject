@@ -2,12 +2,13 @@ import requests
 from news import *
 from stock import *
 from twilio.rest import Client
+import os
 
 """News_completed is the new formatted from news.py file"""
 
 
-account_sid = 'AC67cac865522cd16c383d7fa85e635f26'
-auth_token = '3037426c28f396a82f218d04b56ebfe0'
+account_sid = os.environ.get("account_sid")
+auth_token = os.environ.get("auth_token")
 
 client = Client(account_sid,auth_token)
 
